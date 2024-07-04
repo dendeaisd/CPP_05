@@ -3,7 +3,6 @@ import time
 import sys
 
 # Colors
-PINK    = "\033[38;2;255;182;193m"
 B_PINK  = "\033[1;38;2;255;182;193m"
 RESET   = "\033[0m"
 
@@ -575,7 +574,7 @@ frames = [
      |     |               |  _. |     
      |     |          .--. | | | |     
      |     |          |  | | | | |     
-     |     |__________|  |_|  "'       
+     |     |__________|  |_|  "' |      
      |.--'                   `--.|     
     """
 ]
@@ -585,28 +584,25 @@ def clear():
 
 def animate():
     stop_file = "stop_animation.txt" 
-    animation_cycles = 100 
     try:
         while not os.path.exists(stop_file):
-            for _ in range (animation_cycles):  
-                for frame in frames:
-                    if os.path.exists(stop_file):
-                        break
-                    clear()
-                    print(frame)
-                    time.sleep(1)
+            for frame in frames:
+                if os.path.exists(stop_file):
+                    break
+                clear()
+                print(frame)
+                time.sleep(0.1)
     finally:
         if os.path.exists(stop_file):
-            print("here?")
             os.remove(stop_file)
     clear()
     print(f"""
      |`"-. _________________ .-"'|     
-     |     |- Build        |     |     
-     |     |   complete!-  |  _. |     
+     |     | -{B_PINK} Build{RESET}       |     |     
+     |     |    {B_PINK}complete!{RESET}- |  _. |     
      |     |          .--. | | | |     
      |     |          |  | | | | |     
-     |     |__________|  |_|  "'       
+     |     |__________|  |_|  "' |      
      |.--'                   `--.|     
     """)
     sys.exit()

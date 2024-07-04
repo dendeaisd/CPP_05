@@ -20,7 +20,7 @@ $(NAME) : $(OBJ)
 	@python3 anim.py &
 	@ANIMATION_PID=$$!;
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-	@sleep 100 
+	@sleep  6.9
 	@touch stop_animation.txt
 	@wait $$ANIMATION_PID 2>/dev/null
 
