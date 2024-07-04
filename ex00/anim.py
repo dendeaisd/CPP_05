@@ -580,7 +580,7 @@ frames = [
 ]
 
 def clear():
-    os.system('clear')
+    os.system('printf "\033c"')
 
 def animate():
     stop_file = "stop_animation.txt" 
