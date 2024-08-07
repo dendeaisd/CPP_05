@@ -1,5 +1,4 @@
 #include "Bureaucrat.hpp"
-#include <algorithm>
 
 Bureaucrat::Bureaucrat() : name_("None"), grade_(150) {
   std::cout << "Default constructor called." << std::endl; 
@@ -25,6 +24,41 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
   if (this != &other) {
     grade_ = other.getGrade();
   }
-  std::cout << "Assign operator called." << std::endl;
+  std::cout << "Assignment operator called." << std::endl;
   return(*this); 
 }
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
+  os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+  return(os);
+}
+
+const std::string& Bureaucrat::getName() const {
+  return (this->name_);
+}
+
+int Bureaucrat::getGrade() const {
+  return (this->grade_);
+}
+
+void Bureaucrat::incrementGrade(){
+  if (grade_ - 1 < 1) {
+    throw GradeTooHighException();
+  }
+  grade_--;
+}
+
+void Bureaucrat::decrementGrade(){
+  if (grade_ + 1 > 150) {
+    throw GradeTooLowException();
+  }
+  grade_++;
+}
+const char* GradeTooHighException::what() const throw(){
+  return("Grade too high.");
+}
+
+const char* GradeTooLowException::what() const throw(){
+  return("Grade too low.");
+}
+
