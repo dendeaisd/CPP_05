@@ -1,6 +1,7 @@
 #ifndef BUREAUCRAT_H
 #define BUREAUCRAT_H
 
+#include <ostream>
 #include <string>
 #include <iostream>
 #include <exception>
@@ -20,6 +21,21 @@ public:
   void decrementGrade();
 
 private:
-  const std::string name;
-  int grade;
+  const std::string name_;
+  int grade_;
 };
+
+class GradeTooHighException : public std::exception {
+public:
+  virtual const char* what() const throw();
+};
+
+class GradeTooLowException : public std::exception {
+public:
+  virtual const char* what() const throw();
+};
+
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
+
+#endif
