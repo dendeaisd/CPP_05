@@ -1,5 +1,10 @@
 #include "Bureaucrat.hpp"
 
+#define BLUE "\033[34m"
+#define PINK "\033[35m"
+#define RED "\033[38;2;255;128;128m"
+#define RESET "\033[0m"
+
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
     : _name(name), _grade(grade) {
   if (grade < 1) {
@@ -25,14 +30,15 @@ void Bureaucrat::decrementGrade() {
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const noexcept {
-  return "Grade is too high!";
+  return RED "Grade is too high!" RESET;
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const noexcept {
-  return "Grade is too low!";
+  return RED "Grade is too low!" RESET;
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bc) {
-  out << bc.getName() << ", bureaucrat grade " << bc.getGrade();
+  out << BLUE << bc.getName() << RESET << "🧑‍💻 , bureaucrat grade "
+      << PINK << bc.getGrade() << RESET;
   return out;
 }
