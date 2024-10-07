@@ -1,57 +1,31 @@
-#include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include <iostream>
+#include "Intern.hpp"
 
 int main() {
-  try {
-    std::cout << GREEN << "\n===================" << std::endl;
-    std::cout << "Test 1: Bureaucrats and Forms Initialization" << std::endl;
-    std::cout << "===============================" << RESET << std::endl;
-    /*Test: Bureaucrats and Forms*/
-    Bureaucrat john("John", 2);
-    std::cout << "Bureaucrat: " << john << std::endl;
-    Bureaucrat jane("Jane", 149);
-    std::cout << "Bureaucrat: " << jane << std::endl;
-    Bureaucrat jack("Jack", 50);
-    std::cout << "Bureaucrat: " << jack << "\n" << std::endl;
+  Intern someRandomIntern;
+  AForm *form;
 
-    ShrubberyCreationForm shrubbery("Shrubbery");
-    std::cout << shrubbery << std::endl;
-    RobotomyRequestForm robotomy("Robotomy");
-    std::cout << robotomy << std::endl;
-    PresidentialPardonForm pardony("Pardony");
-    std::cout << pardony << std::endl;
+  std::cout << "\n";
+  form = someRandomIntern.makeForm("robotomy request", "Bender");
+  if (form) {
+    std::cout << *form << std::endl;
+  }
 
-    std::cout << GREEN << "\n===================" << std::endl;
-    std::cout << "Test 2: Signing and executing ShrubberyCreationForm"
-              << std::endl;
-    std::cout << "===============================" << RESET << std::endl;
-    jack.signForm(shrubbery);
-    std::cout << shrubbery << std::endl;
-    jane.executeForm(shrubbery);
-    john.executeForm(shrubbery);
+  std::cout << "\n";
+  form = someRandomIntern.makeForm("shrubbery creation", "Home");
+  if (form) {
+    std::cout << *form << std::endl;
+  }
 
-    std::cout << GREEN << "\n===================" << std::endl;
-    std::cout << "Test 3: Signing and executing RobotomyRequestForm"
-              << std::endl;
-    std::cout << "===============================" << RESET << std::endl;
-    john.signForm(robotomy);
-    std::cout << robotomy << std::endl;
-    john.executeForm(robotomy);
-    john.executeForm(robotomy);
+  std::cout << "\n";
+  form = someRandomIntern.makeForm("presidential pardon", "Ford Prefect");
+  if (form) {
+    std::cout << *form << std::endl;
+  }
 
-    std::cout << GREEN << "\n===================" << std::endl;
-    std::cout << "Test 4: Signing and executing PresidentialPardonForm"
-              << std::endl;
-    std::cout << "===============================" << RESET << std::endl;
-    john.signForm(pardony);
-    std::cout << pardony << std::endl;
-    john.executeForm(pardony);
-
-  } catch (const std::exception &e) {
-    std::cerr << "Caught an exception: " << e.what() << std::endl;
+  std::cout << "\n";
+  form = someRandomIntern.makeForm("unknown form", "Target");
+  if (!form) {
+    std::cerr << "Form creation failed." << std::endl;
   }
 
   return 0;

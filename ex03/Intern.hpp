@@ -16,4 +16,4 @@ public:
   ~Intern() = default;
 
   AForm *makeForm(const std::string &formName, const std::string &target);
-}
+};
