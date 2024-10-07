@@ -41,3 +41,10 @@ int Form::getGradeToSign() const { return _gradeToSign; }
 
 int Form::getGradeToExecute() const { return _gradeToExecute; }
 
+/*Member func to sign the form*/
+void Form::beSigned(const Bureaucrat &bureaucrat) {
+	if(bureaucrat.getGrade() > _gradeToSign) {
+		throw Form::GradeTooLowException();
+	}
+	_isSigned = true;
+}
