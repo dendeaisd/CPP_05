@@ -31,3 +31,13 @@ Form &Form::operator=(const Form &other) {
 
 /*Destructor*/
 Form::~Form() {};
+
+/*Getters*/
+const std::string &Form::getName() const { return _name; }
+
+bool Form::isSigned() const { return isSigned; }
+
+int Form::getGradeToSign() const { return _gradeToSign; }
+
+int Form::getGradeToExecute() const { return _gradeToExecute; }
+
