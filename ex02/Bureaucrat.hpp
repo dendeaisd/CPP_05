@@ -7,6 +7,7 @@
 #include <string>
 
 #define BLUE "\033[34m"
+#define GRAY "\033[38;2;169;169;169m"
 #define DPINK "\033[35m"
 #define PINK "\033[38;2;255;105;180m"
 #define RED "\033[38;2;255;128;128m"
