@@ -5,7 +5,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 protected:
   const std::string _name;
   bool _isSigned;
@@ -13,12 +13,12 @@ protected:
   const int _gradeToExecute;
 
 public:
-  /**Orthodox Canonical Form Elements*/
-  Form();
-  Form(const std::string &name, int gradeToSign, int gradeToExecute);
-  Form(const Form &other);
-  Form &operator=(const Form &other);
-  virtual ~Form();
+  /**Orthodox Canonical AForm Elements*/
+  AForm();
+  AForm(const std::string &name, int gradeToSign, int gradeToExecute);
+  AForm(const AForm &other);
+  AForm &operator=(const AForm &other);
+  virtual ~AForm();
 
   /**Virtual func to make this class abstract**/
   virtual void execute(Bureaucrat const &executor) const = 0;
@@ -42,4 +42,4 @@ public:
   };
 };
 
-std::ostream &operator<<(std::ostream &out, const Form &form);
+std::ostream &operator<<(std::ostream &out, const AForm &form);
