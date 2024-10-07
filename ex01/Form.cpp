@@ -43,8 +43,25 @@ int Form::getGradeToExecute() const { return _gradeToExecute; }
 
 /*Member func to sign the form*/
 void Form::beSigned(const Bureaucrat &bureaucrat) {
-	if(bureaucrat.getGrade() > _gradeToSign) {
-		throw Form::GradeTooLowException();
-	}
-	_isSigned = true;
+  if (bureaucrat.getGrade() > _gradeToSign) {
+    throw Form::GradeTooLowException();
+  }
+  _isSigned = true;
+}
+
+/*Exception classes*/
+const char *Form::GradeTooHighException::what() const noexcept {
+  return "Form grade is too high!";
+}
+
+const char *Form::GradeTooLowException::what() const noexcept {
+  return "Form grade is too low";
+}
+
+std::ostream &operator<<(std::ostream &out, const Form &form) {
+  out << "Form: " << form.getName()
+      << " | Signed: " << (form.isSigned() ? "Yes" : "No")
+      << " | Grade to sign: " << form.getGradeToSign()
+      << " | Grade to execute: " << form.getGradeToExecute();
+  return out;
 }
