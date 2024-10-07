@@ -1,11 +1,6 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-#define BLUE "\033[34m"
-#define PINK "\033[38;2;255;105;180m"
-#define ORANGE "\033[38;2;255;165;0m"
-#define RESET "\033[0m"
-
 /*Default constuctor*/
 Form::Form()
     : _name("Empty Form"), _isSigned(false), _gradeToSign(150),
@@ -49,6 +44,9 @@ int Form::getGradeToExecute() const { return _gradeToExecute; }
 
 /*Member func to sign the form*/
 void Form::beSigned(const Bureaucrat &bureaucrat) {
+  if (_isSigned) {
+    throw std::runtime_error("Form is already signed");
+  }
   if (bureaucrat.getGrade() > _gradeToSign) {
     throw Form::GradeTooLowException();
   }
@@ -65,9 +63,9 @@ const char *Form::GradeTooLowException::what() const noexcept {
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &form) {
-  out << "Form: " << form.getName() << BLUE  << "📝" << RESET
+  out << "Form: " << BLUE << form.getName() << "📝" << RESET
       << " | Signed: " << PINK << (form.isSigned() ? "Yes" : "No") << RESET
       << " | Grade to sign: " << PINK << form.getGradeToSign() << RESET
-      << " | Grade to execute: " << PINK << form.getGradeToExecute();
+      << " | Grade to execute: " << PINK << form.getGradeToExecute() << RESET;
   return out;
 }

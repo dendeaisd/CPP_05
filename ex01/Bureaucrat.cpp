@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 
 #define BLUE "\033[34m"
-#define PINK "\033[35m"
+#define DPINK "\033[35m"
 #define RED "\033[38;2;255;128;128m"
 #define RESET "\033[0m"
 
@@ -49,6 +49,6 @@ void Bureaucrat::signForm(Form &form) const {
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bc) {
   out << BLUE << bc.getName() << RESET << "🧑‍💻 , bureaucrat grade "
-      << PINK << bc.getGrade() << RESET;
+      << DPINK << bc.getGrade() << RESET;
   return out;
 }

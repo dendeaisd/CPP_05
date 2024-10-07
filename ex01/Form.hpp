@@ -3,6 +3,11 @@
 #include <iostream>
 #include <string.h>
 
+#define BLUE "\033[34m"
+#define PINK "\033[38;2;255;105;180m"
+#define ORANGE "\033[38;2;255;165;0m"
+#define GREEN "\033[38;2;0;128;0m"
+#define RESET "\033[0m"
 class Bureaucrat;
 
 class Form {
