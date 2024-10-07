@@ -17,7 +17,7 @@ int main() {
     /*Test: Bureaucrats and Forms*/
     Bureaucrat john("John", 2);
     Bureaucrat jane("Jane", 149);
-    Bureaucrat jack("Bob", 50);
+    Bureaucrat jack("Jack", 50);
 
     Form formA("Form A", 1, 5);
     Form formB("Form B", 50, 50);
