@@ -1,16 +1,15 @@
 #pragma once
 
 #include "AForm.hpp"
-#include <cstdlib>
 #include <string>
 
-class RobotomyRequestForm : public AForm {
+class PresidentialPardonForm : public AForm {
 private:
   std::string _target;
 
 public:
-  RobotomyRequestForm(const std::string &target);
-  ~RobotomyRequestForm() {};
+  PresidentialPardonForm(const std::string &target);
+  ~PresidentialPardonForm() {}
 
   void execute(Bureaucrat const &executor) const override;
 };

@@ -1,7 +1,8 @@
 NAME		  :=	out
 CC			  :=	c++
 FLAGS		  :=	-Wall -Wextra -Werror -std=c++17
-SRC			  :=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+SRC			  :=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+							RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJ			  :=	$(SRC:.cpp=.o)
 
 # Colors

@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include <iostream>
@@ -20,6 +21,8 @@ int main() {
     std::cout << shrubbery << std::endl;
     RobotomyRequestForm robotomy("Robotomy");
     std::cout << robotomy << std::endl;
+    PresidentialPardonForm pardony("Pardony");
+    std::cout << pardony << std::endl;
 
     std::cout << GREEN << "\n===================" << std::endl;
     std::cout << "Test 2: Signing and executing ShrubberyCreationForm"
@@ -38,6 +41,14 @@ int main() {
     std::cout << robotomy << std::endl;
     john.executeForm(robotomy);
     john.executeForm(robotomy);
+
+    std::cout << GREEN << "\n===================" << std::endl;
+    std::cout << "Test 4: Signing and executing PresidentialPardonForm"
+              << std::endl;
+    std::cout << "===============================" << RESET << std::endl;
+    john.signForm(pardony);
+    std::cout << pardony << std::endl;
+    john.executeForm(pardony);
 
   } catch (const std::exception &e) {
     std::cerr << "Caught an exception: " << e.what() << std::endl;
