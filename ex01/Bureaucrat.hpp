@@ -6,6 +6,14 @@
 #include <stdexcept>
 #include <string>
 
+#define BLUE "\033[34m"
+#define DPINK "\033[35m"
+#define PINK "\033[38;2;255;105;180m"
+#define RED "\033[38;2;255;128;128m"
+#define ORANGE "\033[38;2;255;165;0m"
+#define GREEN "\033[38;2;0;128;0m"
+#define RESET "\033[0m"
+
 class Bureaucrat {
 private:
   const std::string _name;

@@ -1,10 +1,5 @@
 #include "Bureaucrat.hpp"
 
-#define BLUE "\033[34m"
-#define DPINK "\033[35m"
-#define RED "\033[38;2;255;128;128m"
-#define RESET "\033[0m"
-
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
     : _name(name), _grade(grade) {
   if (grade < 1) {
