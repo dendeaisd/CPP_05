@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 #define BLUE "\033[34m"
 #define PINK "\033[38;2;255;105;180m"
@@ -40,7 +41,7 @@ Form::~Form() {};
 /*Getters*/
 const std::string &Form::getName() const { return _name; }
 
-bool Form::isSigned() const { return isSigned; }
+bool Form::isSigned() const { return _isSigned; }
 
 int Form::getGradeToSign() const { return _gradeToSign; }
 
@@ -64,7 +65,7 @@ const char *Form::GradeTooLowException::what() const noexcept {
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &form) {
-  out << BLUE << "Form: " << form.getName() << "📝" << RESET
+  out << "Form: " << form.getName() << BLUE  << "📝" << RESET
       << " | Signed: " << PINK << (form.isSigned() ? "Yes" : "No") << RESET
       << " | Grade to sign: " << PINK << form.getGradeToSign() << RESET
       << " | Grade to execute: " << PINK << form.getGradeToExecute();

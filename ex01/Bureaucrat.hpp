@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Form.hpp"
+
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -24,6 +26,9 @@ public:
   /**Grade Manipulation**/
   void incrementGrade();
   void decrementGrade();
+
+  /**Method to sign a form**/
+  void signForm(Form &form) const;
 
   /**Custom exception classes**/
   class GradeTooHighException : public std::exception {

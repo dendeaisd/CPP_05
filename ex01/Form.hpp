@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Bureaucrat.hpp"
-
 #include <iostream>
 #include <string.h>
+
+class Bureaucrat;
 
 class Form {
 private:
@@ -39,4 +39,4 @@ public:
   };
 };
 
-std::ostream &operator<<(std::ostream, const Form &form);
+std::ostream &operator<<(std::ostream &out, const Form &form);
