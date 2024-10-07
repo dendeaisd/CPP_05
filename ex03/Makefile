@@ -1,7 +1,8 @@
 NAME		  :=	out
 CC			  :=	c++
 FLAGS		  :=	-Wall -Wextra -Werror -std=c++17
-SRC			  :=	main.cpp Bureaucrat.cpp
+SRC			  :=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+							RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJ			  :=	$(SRC:.cpp=.o)
 
 # Colors
@@ -28,11 +29,11 @@ $(NAME) 	: $(OBJ)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean		  :
-	@echo "$(UP)$(BEGIN)$(CUT)$(YELLOW)🧹Cleaning object files...$(RESET)"
+	@echo -e "$(UP)$(BEGIN)$(CUT)$(YELLOW)🧹Cleaning object files...$(RESET)"
 	@rm -rf $(OBJ)
 
 fclean		:
-	@echo "$(UP)$(BEGIN)$(CUT)$(ORANGE)🔥Full clean, removing executable...$(RESET)"
+	@echo -e "$(UP)$(BEGIN)$(CUT)$(ORANGE)🔥Full clean, removing executable...$(RESET)"
 	@rm -rf $(OBJ)
 	@rm -f $(NAME)
 
