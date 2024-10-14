@@ -32,11 +32,11 @@ $(OBJDIR)/%.o 	: %.cpp | $(OBJDIR)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean		  :
-	@echo -e "$(UP)$(BEGIN)$(CUT)$(YELLOW)🧹Cleaning object files...$(RESET)"
+	@echo "$(UP)$(BEGIN)$(CUT)$(YELLOW)🧹Cleaning object files...$(RESET)"
 	@rm -rf $(OBJDIR)
 
 fclean		:
-	@echo -e "$(UP)$(BEGIN)$(CUT)$(ORANGE)🔥Full clean, removing executable...$(RESET)"
+	@echo "$(UP)$(BEGIN)$(CUT)$(ORANGE)🔥Full clean, removing executable...$(RESET)"
 	@rm -rf $(OBJDIR)
 	@rm -f $(NAME)
 
