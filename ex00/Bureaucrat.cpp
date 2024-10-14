@@ -38,7 +38,7 @@ const char *Bureaucrat::GradeTooLowException::what() const noexcept {
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bc) {
-  out << BLUE << bc.getName() << RESET << "🧑‍💻 , bureaucrat grade "
+  out << BLUE << bc.getName() << RESET << "🧑💻, bureaucrat grade "
       << PINK << bc.getGrade() << RESET;
   return out;
 }

@@ -13,8 +13,8 @@ public:
   /**Orthodox Canonical Form Elements*/
   Bureaucrat() = default;
   Bureaucrat(const std::string &name, int grade);
-  Bureaucrat(const Bureaucrat &other) = default;
-  Bureaucrat &operator=(const Bureaucrat &other) = default;
+  Bureaucrat(const Bureaucrat &other) = delete;
+  Bureaucrat &operator=(const Bureaucrat &other) = delete;
   ~Bureaucrat() = default;
 
   /**Getters**/
