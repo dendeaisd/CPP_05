@@ -23,16 +23,6 @@ Form::Form(const Form &other)
       _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {
 }
 
-/*Assignment operator*/
-Form &Form::operator=(const Form &other) {
-  if (this != &other)
-    _isSigned = other._isSigned;
-  return *this;
-}
-
-/*Destructor*/
-Form::~Form() {};
-
 /*Getters*/
 const std::string &Form::getName() const { return _name; }
 

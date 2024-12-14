@@ -17,8 +17,8 @@ public:
   Form();
   Form(const std::string &name, int gradeToSign, int gradeToExecute);
   Form(const Form &other);
-  Form &operator=(const Form &other);
-  ~Form();
+  Form &operator=(const Form &other) = delete;
+  ~Form() = default;
 
   /**Getters**/
   const std::string &getName() const;
