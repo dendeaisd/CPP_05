@@ -17,8 +17,8 @@ public:
   AForm();
   AForm(const std::string &name, int gradeToSign, int gradeToExecute);
   AForm(const AForm &other);
-  AForm &operator=(const AForm &other);
-  virtual ~AForm();
+  AForm &operator=(const AForm &other) = delete;
+  virtual ~AForm() = default;
 
   /**Virtual func to make this class abstract**/
   virtual void execute(Bureaucrat const &executor) const = 0;

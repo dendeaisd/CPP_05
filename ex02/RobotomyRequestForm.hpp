@@ -9,8 +9,11 @@ private:
   std::string _target;
 
 public:
+  RobotomyRequestForm() = default;
   RobotomyRequestForm(const std::string &target);
-  ~RobotomyRequestForm() {};
+  RobotomyRequestForm(RobotomyRequestForm const &other) = default;
+  RobotomyRequestForm &operator=(RobotomyRequestForm const &other) = default;
+  ~RobotomyRequestForm() = default;
 
   void execute(Bureaucrat const &executor) const override;
 };

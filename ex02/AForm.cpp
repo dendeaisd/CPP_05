@@ -23,16 +23,6 @@ AForm::AForm(const AForm &other)
       _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {
 }
 
-/*Assignment operator*/
-AForm &AForm::operator=(const AForm &other) {
-  if (this != &other)
-    _isSigned = other._isSigned;
-  return *this;
-}
-
-/*Destructor*/
-AForm::~AForm() {};
-
 /*Getters*/
 const std::string &AForm::getName() const { return _name; }
 
