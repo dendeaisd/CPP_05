@@ -14,6 +14,9 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
   }
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const &other) 
+        : _name(other._name), _grade(other._grade) {}
+
 const std::string &Bureaucrat::getName() const { return _name; }
 
 int Bureaucrat::getGrade() const { return _grade; }
