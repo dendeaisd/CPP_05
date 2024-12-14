@@ -11,7 +11,7 @@ public:
   PresidentialPardonForm() = default;
   PresidentialPardonForm(const std::string &target);
   PresidentialPardonForm(PresidentialPardonForm const &other) = default;
-  PresidentialPardonForm &operator=(PresidentialPardonForm const &other) = default;
+  PresidentialPardonForm &operator=(PresidentialPardonForm const &other) = delete;
   ~PresidentialPardonForm()= default;
 
   void execute(Bureaucrat const &executor) const override;
